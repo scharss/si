@@ -311,6 +311,17 @@ SOFTWARE.-->
                 document.getElementById("s1").style.display = "block";
             }
         </script>
+	    
+	    
+	    <script src="js/timer.js"></script>
+    <script>
+        (function() {
+            Timer.start({
+                'timer': document.getElementById('js-timer'),
+                'endtime': document.getElementById('js-timer').getAttribute('data-endtime')
+            });
+        })();
+    </script>
 
 
 
