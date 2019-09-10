@@ -42,6 +42,32 @@
         div.leaflet-bar {
             text-align: center;
     </style>
+    
+    <style>
+        .timer__item {
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .timer__item+.timer__item {
+            margin-left: 10px;
+        }
+        
+        .timer__value,
+        .timer__label {
+            display: block;
+        }
+        
+        .timer__value {
+            font-size: 15px;
+        }
+        
+        timer__label {
+            font-size: 5px;
+        }
+    </style>
+    
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
@@ -63,10 +89,63 @@
                 <div id="basemaps-wrapper" class="leaflet-bar">
 
 
-                    <p>
-                        <strong><h5>Consolidado</h5></strong>
-                    </p>
-                    <button onclick="mostrar()" class="btn btn-primary">Mostrar</button>
+                  <div id="js-timer" class="timer" role="timer" aria-label="A timer, counting down to {{eventName}}" data-endtime="2019-10-27 00:00:00">
+
+<!--MIT License
+
+Copyright (c) 2016 Tim Wright
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.-->
+				
+        <span class="timer__item" id="timer-days">
+				<span class="timer__value">{{days}}</span>
+        <span class="timer__label"></span>
+        </span>
+        <!--/.timer__item-->
+
+        <span class="timer__item" id="timer-hours">
+				<span class="timer__value">{{hours}}</span>
+        <span class="timer__label">
+					
+				</span>
+        </span>
+        <!--/.timer__item-->
+
+        <span class="timer__item" id="timer-minutes">
+				<span class="timer__value">{{minutes}}</span>
+        <span class="timer__label">
+					
+				</span>
+        </span>
+        <!--/.timer__item-->
+
+        <span class="timer__item" id="timer-seconds">
+				<span class="timer__value">{{seconds}}</span>
+        <span class="timer__label">
+					
+				</span>
+        </span>
+        <!--/.timer__item-->
+
+    </div>
+    <!--/.timer-->
+                    <button onclick="mostrar()" class="btn btn-primary">Consolidado</button>
 
                     <br><br>
                     <section id="s1" class="hidden">
